@@ -75,29 +75,6 @@ public class RubiksCube3D extends RubiksCube {
         return true;
     }
 
-    @Override
-    public void performMove(Move move) {
-        switch (move) {
-            case F -> f();
-            case FPRIME -> fPrime();
-            case F2 -> f2();
-            case B -> b();
-            case BPRIME -> bPrime();
-            case B2 -> b2();
-            case U -> u();
-            case UPRIME -> uPrime();
-            case U2 -> u2();
-            case D -> d();
-            case DPRIME -> dPrime();
-            case D2 -> d2();
-            case L -> l();
-            case LPRIME -> lPrime();
-            case L2 -> l2();
-            case R -> r();
-            case RPRIME -> rPrime();
-            case R2 -> r2();
-        }
-    }
 
     @Override
     public void f() {

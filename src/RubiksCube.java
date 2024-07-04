@@ -112,7 +112,30 @@ public abstract class RubiksCube {
      *
      * @param move The move to perform.
      */
-    public abstract void performMove(Move move);
+    public void performMove(Move move) {
+        switch (move) {
+            case F -> f();
+            case FPRIME -> fPrime();
+            case F2 -> f2();
+            case B -> b();
+            case BPRIME -> bPrime();
+            case B2 -> b2();
+            case U -> u();
+            case UPRIME -> uPrime();
+            case U2 -> u2();
+            case D -> d();
+            case DPRIME -> dPrime();
+            case D2 -> d2();
+            case L -> l();
+            case LPRIME -> lPrime();
+            case L2 -> l2();
+            case R -> r();
+            case RPRIME -> rPrime();
+            case R2 -> r2();
+        }
+    }
+
+    ;
 
     /**
      * Applies the inverse of the given move to the Rubik's Cube.
@@ -200,11 +223,5 @@ public abstract class RubiksCube {
 
     public abstract void b2();
 
-    // Abstract methods for corner manipulation.
-    // These methods are placeholders for operations related to the cube's corners.
-    public abstract String getCornerColorString(int index);
 
-    public abstract int getCornerIndex(int index);
-
-    public abstract int getCornerOrientation(int index);
 }
