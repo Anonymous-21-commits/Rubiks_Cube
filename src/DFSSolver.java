@@ -7,7 +7,7 @@ import java.util.List;
 public class DFSSolver<T extends RubiksCube> {
     private final List<RubiksCube.Move> moves;
     private final int maxSearchDepth;
-    private final T rubiksCube;
+     final T rubiksCube;
 
     // Constructor
     public DFSSolver(T rubiksCube, int maxSearchDepth) {
