@@ -6,7 +6,7 @@ import java.util.Random;
  * Abstract class representing a Rubik's Cube.
  * Provides the structure and common functionalities for any Rubik's Cube implementation.
  */
-public abstract class RubiksCube {
+public abstract class RubiksCube implements Cloneable {
 
     /**
      * Enum representing possible moves on a Rubik's Cube.
@@ -222,6 +222,12 @@ public abstract class RubiksCube {
     public abstract void bPrime();
 
     public abstract void b2();
-
-
+    @Override
+    public RubiksCube clone() {
+        try {
+            return (RubiksCube) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError("Cloning not supported for RubiksCube");
+        }
+    }
 }
