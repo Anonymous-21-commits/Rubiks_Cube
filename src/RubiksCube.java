@@ -111,18 +111,17 @@ public abstract class RubiksCube {
      * This method must be implemented by subclasses to define how each move affects the cube's state.
      *
      * @param move The move to perform.
-     * @return The updated Rubik's Cube after the move.
      */
-    public abstract RubiksCube performMove(Move move);
+    public abstract void performMove(Move move);
 
     /**
      * Applies the inverse of the given move to the Rubik's Cube.
      *
      * @param move The move to invert.
-     * @return The updated Rubik's Cube after the inverse move.
+     * @ The updated Rubik's Cube after the inverse move.
      */
-    public RubiksCube invert(Move move) {
-        return switch (move) {
+    public void invert(Move move) {
+        switch (move) {
             case L -> this.performMove(Move.LPRIME);
             case LPRIME -> this.performMove(Move.L);
             case L2 -> this.performMove(Move.L2);
@@ -141,7 +140,8 @@ public abstract class RubiksCube {
             case B -> this.performMove(Move.BPRIME);
             case BPRIME -> this.performMove(Move.B);
             case B2 -> this.performMove(Move.B2);
-        };
+        }
+        ;
     }
 
     /**
@@ -164,41 +164,41 @@ public abstract class RubiksCube {
 
     // Abstract methods for each type of move.
     // These methods provide specific shortcuts for each move on the Rubik's Cube.
-    public abstract RubiksCube f();
+    public abstract void f();
 
-    public abstract RubiksCube fPrime();
+    public abstract void fPrime();
 
-    public abstract RubiksCube f2();
+    public abstract void f2();
 
-    public abstract RubiksCube u();
+    public abstract void u();
 
-    public abstract RubiksCube uPrime();
+    public abstract void uPrime();
 
-    public abstract RubiksCube u2();
+    public abstract void u2();
 
-    public abstract RubiksCube l();
+    public abstract void l();
 
-    public abstract RubiksCube lPrime();
+    public abstract void lPrime();
 
-    public abstract RubiksCube l2();
+    public abstract void l2();
 
-    public abstract RubiksCube r();
+    public abstract void r();
 
-    public abstract RubiksCube rPrime();
+    public abstract void rPrime();
 
-    public abstract RubiksCube r2();
+    public abstract void r2();
 
-    public abstract RubiksCube d();
+    public abstract void d();
 
-    public abstract RubiksCube dPrime();
+    public abstract void dPrime();
 
-    public abstract RubiksCube d2();
+    public abstract void d2();
 
-    public abstract RubiksCube b();
+    public abstract void b();
 
-    public abstract RubiksCube bPrime();
+    public abstract void bPrime();
 
-    public abstract RubiksCube b2();
+    public abstract void b2();
 
     // Abstract methods for corner manipulation.
     // These methods are placeholders for operations related to the cube's corners.
